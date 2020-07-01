@@ -23,10 +23,11 @@ var list = new List<int> { 1, 2, 3 };
 Этот код эквивалентен приведенному ниже:
 
 ```cs
-var list = new List<int>();
-list.Add(1);
-list.Add(2);
-list.Add(3);
+var temp = new List<int>();
+temp.Add(1);
+temp.Add(2);
+temp.Add(3);
+var list = temp;
 ```
 
 Возможность использования синтаксиса инициализации коллекции не ограничивается только классами из BCL. Он может быть использован с любым типом, удовлетворяющим следующим условиям:
@@ -47,7 +48,7 @@ public class CustomList<T>: IEnumerable
 ```cs
 public static class ExistingTypeExtensions
 {
-    public static void Add<T>(ExistingType @this, T item) => throw new NotImplementedException();
+    public static void Add<T>(this ExistingType @this, T item) => throw new NotImplementedException();
 }
 ```
 
