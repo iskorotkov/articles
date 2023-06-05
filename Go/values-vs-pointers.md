@@ -217,7 +217,7 @@ func createUser() pointers.User {
 и запустить его вот так:
 
 ```shell
-go.exe test -benchmem -bench . ./...
+go test -benchmem -bench . ./...
 ```
 
 то можно получить вот такой результат:
